@@ -1,3 +1,4 @@
+
 //Caption and Image Function
 function imageAndName(name, imageUrl) {
     document.getElementById('computer').innerHTML = `Computer has selected ${name}`;
@@ -26,7 +27,6 @@ for (var i = 0; i <= buttonsCount; i += 1) {
         
         let result = document.getElementById('result');
         let gameWinner = "";
-        let cpuWin = 
 
         if (userPick === "Rock" && computerRPS === 1) {
             gameWinner = "Tie";
@@ -49,30 +49,21 @@ for (var i = 0; i <= buttonsCount; i += 1) {
         } else {
             gameWinner = "Tie"
         };
-        
-        let userWins = 0;
-        let tiedGames = 0;
-        let computerWins = 0;
 
         switch(gameWinner) {
             case "User":
                 result.innerHTML = "User wins!";
                 result.style.color = "#7FFF00";
-                userWins += 1;
-
                 break;
             case "CPU":
                 result.innerHTML = "CPU wins";
                 result.style.color = "red";
-                computerWins += 1; 
                 break;
             case "Tie":
                 result.innerHTML = "It's a tie...";
                 result.style.color = "#000000";
-                tiedGames += 1;
                 break;
-        }
-
+            }
     }
 }
 
