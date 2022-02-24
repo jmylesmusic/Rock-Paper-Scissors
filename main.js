@@ -11,6 +11,7 @@ for (var i = 0; i <= buttonsCount; i += 1) {
         document.getElementById('userMove').innerHTML = `User has selected ${userPick}`;
         document.getElementById('userImage').src = `images/${userPick}.jpg`;
         let computerRPS = (Math.floor(Math.random() *3) +1);
+
         switch (computerRPS) {
             case 1:
                 imageAndName("Rock", "images/Rock.jpg");        
@@ -22,36 +23,48 @@ for (var i = 0; i <= buttonsCount; i += 1) {
                 imageAndName("Scissors", "images/Scissors.jpg");
                 break;
         };
+        
+        let result = document.getElementById('result');
+        let gameWinner = "";
+
         if (userPick === "Rock" && computerRPS === 1) {
-            document.getElementById('result').innerHTML = "It's a tie...";
-            document.getElementById('result').style.color = "#000000";   
+            gameWinner = "Tie";
         } else if (userPick === "Rock" && computerRPS === 2) {
-            document.getElementById('result').innerHTML = "CPU wins";
-            document.getElementById('result').style.color = "red"; 
+            gameWinner = "CPU";
         } else if (userPick === "Rock" && computerRPS === 3) {
-            document.getElementById('result').innerHTML = "User wins!";
-            document.getElementById('result').style.color = "#7FFF00";
+            gameWinner = "User";
         } else if (userPick === "Paper" && computerRPS === 1) {
-            document.getElementById('result').innerHTML = "User wins!";
-            document.getElementById('result').style.color = "#7FFF00";
+            gameWinner = "User";
         } else if (userPick === "Paper" && computerRPS === 2) {
-            document.getElementById('result').innerHTML = "It's a tie..."; 
-            document.getElementById('result').style.color = "#000000";           
+            gameWinner = "Tie";          
         } else if (userPick === "Paper" && computerRPS === 3) {
-            document.getElementById('result').innerHTML = "CPU wins";
-            document.getElementById('result').style.color = "red";
+            gameWinner = "CPU";
         } else if (userPick === "Scissors" && computerRPS === 1) {
-            document.getElementById('result').innerHTML = "CPU wins";
-            document.getElementById('result').style.color = "red";
+            gameWinner = "CPU";
         } else if (userPick === "Scissors" && computerRPS === 2) {
-            document.getElementById('result').innerHTML = "User wins!";
-            document.getElementById('result').style.color = "#7FFF00"; 
+            gameWinner = "User";
         } else if (userPick === "Scissors" && computerRPS === 3) {
-            document.getElementById('result').innerHTML = "It's a tie...";
-            document.getElementById('result').style.color = "#000000";   
+            gameWinner = "Tie"; 
         } else {
-            document.getElementById('result').innerHTML = "You probably cheated...";
+            gameWinner = "Tie"
         };
+        
+        switch(gameWinner) {
+            case "User":
+                result.innerHTML = "User wins!";
+                result.style.color = "#7FFF00";
+
+                break;
+            case "CPU":
+                result.innerHTML = "CPU wins";
+                result.style.color = "red"; 
+                break;
+            case "Tie":
+                result.innerHTML = "It's a tie...";
+                result.style.color = "#000000";
+                break;
+        }
+
     }
 }
 
