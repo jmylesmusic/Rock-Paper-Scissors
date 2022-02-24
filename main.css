@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+:root{
+--font: 'Comfortaa', cursive;
+--rock: images/rock.jpg;
+}
+
+body{
+    font-family:var(--font);
+}
+
+img{
+    display:block;
+    width:400px;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#computer{
+    display:block;
+    text-align:center;
+    font-size:40px;
+    width:100%;
+}
+
+button{
+    font-family:var(--font);
+    background-color:grey;
+    border-radius:2px;
+    box-shadow: 2px;
+}
+
+a:hover{
+    cursor: url('images/Rock.jpg') 4px 4px, default !important;
+    
+}
+.buttonGrid{
+    display:grid;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+#userMove{
+display:block;
+text-align:center;
+font-size:40px;
+width:100%;
+}
+
+#result{
+    display:block;
+    text-align:center;
+    font-size:40px;
+    width:100%;
+    }
