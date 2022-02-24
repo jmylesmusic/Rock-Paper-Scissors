@@ -1,11 +1,12 @@
-
-//Caption and Image Function
 function imageAndName(name, imageUrl) {
     document.getElementById('computer').innerHTML = `Computer has selected ${name}`;
     document.getElementById('computerImg').src = imageUrl;
 }
 var buttons = document.getElementsByTagName("button");
 var buttonsCount = buttons.length;
+let timesWon = 0;
+let timesLost = 0;
+let timesTied = 0;
 for (var i = 0; i <= buttonsCount; i += 1) {
     buttons[i].onclick = function() {
         let userPick = this.id;
@@ -49,25 +50,26 @@ for (var i = 0; i <= buttonsCount; i += 1) {
         } else {
             gameWinner = "Tie"
         };
-
         switch(gameWinner) {
             case "User":
                 result.innerHTML = "User wins!";
                 result.style.color = "#7FFF00";
+                timesWon += 1;
                 break;
             case "CPU":
                 result.innerHTML = "CPU wins";
                 result.style.color = "red";
+                timesLost += 1;
                 break;
             case "Tie":
                 result.innerHTML = "It's a tie...";
                 result.style.color = "#000000";
+                timesTied += 1;
                 break;
-            }
+            };
+        document.getElementById('wins').innerHTML = `Wins: ${timesWon}`;
+        document.getElementById('losses').innerHTML = `Losses: ${timesLost}`;
+        document.getElementById('ties').innerHTML = `Ties: ${timesTied}`;
     }
-}
-
-
-//Score
-
-//Replay
+      
+};
