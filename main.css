@@ -9,8 +9,20 @@ body{
     font-family:var(--font);
 }
 
-img{
+.menu{
     display:block;
+    position:absolute;
+    font-size:32px;
+    text-indent:6px;
+    left:0;
+    right:0;
+    top:0;
+    height:40px;
+    background-color:red;
+}
+
+img{
+    display:flex;
     width:400px;
     height:auto;
     margin-left:auto;
@@ -32,10 +44,11 @@ button{
 }
 
 a:hover{
-    cursor: url('images/Rock.jpg') 4px 4px, default !important;
+    cursor: pointer;
     
 }
 .buttonGrid{
+    display:-ms-grid;
     display:grid;
     width:60%;
     margin-left:auto;
@@ -53,4 +66,23 @@ width:100%;
     text-align:center;
     font-size:40px;
     width:100%;
-    }
+}
+
+.wlt{
+    display:table;
+    text-align:center;
+    columns:3;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.container{
+    display:block;
+    width:100%;
+    padding-top: 50px;
+}
+
+@media screen {
+    
+}

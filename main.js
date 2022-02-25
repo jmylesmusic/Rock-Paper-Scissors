@@ -67,9 +67,9 @@ for (var i = 0; i <= buttonsCount; i += 1) {
                 timesTied += 1;
                 break;
             };
-        document.getElementById('wins').innerHTML = `Wins: ${timesWon}`;
-        document.getElementById('losses').innerHTML = `Losses: ${timesLost}`;
-        document.getElementById('ties').innerHTML = `Ties: ${timesTied}`;
+        document.getElementById('wins').innerHTML = timesWon;
+        document.getElementById('losses').innerHTML = timesLost;
+        document.getElementById('ties').innerHTML = timesTied;
     }
       
 };
